@@ -34,12 +34,13 @@ public class Employee {
     }
 
     public double raiseSalary() {
+        double raise=(salary-tax()+bonus());
         if (2021 - hireYear > 9 && 2021 - hireYear < 20) {
-            return (salary * 10) / 100;
+            return raise * 10 / 100;
         } else if (2021 - hireYear < 10) {
-            return (salary * 5) / 100;
+            return raise * 5 / 100;
         } else {
-            return (salary * 15) / 100;
+            return raise * 15 / 100;
         }
     }
 
