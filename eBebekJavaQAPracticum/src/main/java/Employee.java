@@ -18,8 +18,8 @@ public class Employee {
     }
 
     public double tax() {
-        if (salary > 1000) {
-            return salary * 3 / 100;
+       if (salary > 1000) {
+            return salary * 0.03;
         } else {
             return 0;
         }
