@@ -34,20 +34,21 @@ public class Employee {
     }
 
     public double raiseSalary() {
-        double raise=(salary-tax()+bonus());
+        double raise;
         if (2021 - hireYear > 9 && 2021 - hireYear < 20) {
-            return raise * 10 / 100;
+            raise = salary * 0.1;
         } else if (2021 - hireYear < 10) {
-            return raise * 5 / 100;
+            raise = salary * 0.05;
         } else {
-            return raise * 15 / 100;
+            raise = salary * 0.15;
         }
+        return raise;
     }
 
     @Override
     public String toString() {
-        double afterRaiseSalary = salary + raiseSalary() - salary;
         double taxBonus = salary + bonus() - tax();
+        double afterRaiseSalary = salary + raiseSalary() - salary;
         double netSalary = taxBonus + raiseSalary();
         return "Name " + name + "\nSalary " + salary + "\nWork Hours " + workHours
                 + "\nHire Year " + hireYear + "\nTax " + tax() + "\nBonus " + bonus()
